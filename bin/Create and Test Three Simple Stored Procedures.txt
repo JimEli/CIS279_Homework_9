@@ -1,0 +1,48 @@
+-- Create and test three simple stored procedures:
+
+-- drop procedure sp_all_departments;
+
+-- highlight (select) and execute the code from the following line:
+delimiter $$
+create procedure sp_all_departments()
+begin
+	select * from department order by department_name;
+end $$
+-- through the previous line.
+
+-- highlight (select) and execute the code in the following line:
+delimiter ;
+
+-- highlight (select) and execute the code from the following line:
+delimiter $$
+create procedure sp_all_employees()
+begin
+	select * from employee;
+end $$
+-- through the previous line.
+
+-- highlight (select) and execute the code in the following line:
+delimiter ;
+
+-- highlight (select) and execute the code from the following line:
+delimiter $$
+create procedure sp_employees_in_dept(in dept TINYINT)
+begin
+	select * from employee where department_code = dept;
+end $$
+-- through the previous line.
+
+-- highlight (select) and execute the code in the following line:
+delimiter ;
+
+-- test the first procedue by highlighting (selecting) and 
+-- executing the code in the following line:
+call sp_all_departments();
+
+-- test the second procedue by highlighting (selecting) and 
+-- executing the code in the following line:
+call sp_all_employees();
+
+-- test the third procedue by highlighting (selecting) and 
+-- executing the code in the following line:
+call sp_employees_in_dept( 4 );
